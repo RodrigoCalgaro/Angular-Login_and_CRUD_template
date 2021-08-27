@@ -1,0 +1,33 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td,
+th {
+  width: 25%;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.example-flex-container {
+  display: flex;
+}
+
+.view-button {
+  color: cornflowerblue;
+}
+
+.edit-button {
+  color: rgb(255, 193, 35);
+}
+
+.delete-button {
+  color:rgb(212, 0, 0) ;
+}

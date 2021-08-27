@@ -1,0 +1,38 @@
+[
+    {
+        "codigo": 1,
+        "nombre": "Nombre 1",
+        "marca": "Marca 1",
+        "proveedor": "Proveedor 1"
+    },
+    {
+        "codigo": 2,
+        "nombre": "Nombre 2",
+        "marca": "Marca 2",
+        "proveedor": "Proveedor 2"
+    },
+    {
+        "codigo": 3,
+        "nombre": "Nombre 3",
+        "marca": "Marca 3",
+        "proveedor": "Proveedor 3"
+    },
+    {
+        "codigo": 4,
+        "nombre": "Nombre 4",
+        "marca": "Marca 4",
+        "proveedor": "Proveedor 4"
+    },
+    {
+        "codigo": 5,
+        "nombre": "Nombre 5",
+        "marca": "Marca 5",
+        "proveedor": "Proveedor 5"
+    },
+    {
+        "codigo": 6,
+        "nombre": "Nombre 6",
+        "marca": "Marca 6",
+        "proveedor": "Proveedor 6"
+    }
+]
