@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   form: FormGroup;
   loading = false;
 
-  constructor(private fb: FormBuilder, private _snackBar: MatSnackBar, private router: Router) {
+  constructor(private fb: FormBuilder, private _snackBar: MatSnackBar, private router: Router, private authService: AuthService) {
     this.form = this.fb.group({
       usuario: ['', Validators.required],
       password: ['', Validators.required],
@@ -26,21 +27,20 @@ export class LoginComponent implements OnInit {
     const usuario = this.form.value.usuario
     const password = this.form.value.password
 
-    // acá debería hacer una petición al backend para logearme
-    if (usuario == 'admin' && password == 'admin123'){ 
-      this.loading = true;
-      setTimeout(()=>{
-        this.loading = false;
-      }, 2000)
-      this.router.navigate(['home']);
-    } else {
-      this.error()
-      this.form.reset()
-    }
+    this.loading = true;
+    this.authService.logIn(usuario, password).subscribe(res => {
+      this.loading = false;
+      if (res.success){
+        this.router.navigate(['home']);
+      } else {
+        this.error(res.message)
+        this.form.reset()
+      }
+    })
   }
 
-  error(){
-    this._snackBar.open('Usuario o contraseña incorrecto. Usuario: admin Pass: admin123', '', {
+  error(error: string){
+    this._snackBar.open(error , '', {
       duration: 5000,
       horizontalPosition: 'center',
       verticalPosition: 'top',

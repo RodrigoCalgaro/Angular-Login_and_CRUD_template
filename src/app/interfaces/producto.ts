@@ -1,8 +1,9 @@
 export interface Producto {
-    codigo: Number,
-    nombre: String,
-    marca: String,
-    proveedor: String,
+    productoId: number,
+    codigo: number,
+    nombre: string,
+    marca: string,
+    proveedor: string,
 }
 
 
