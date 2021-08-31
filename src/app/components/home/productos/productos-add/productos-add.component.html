@@ -1,3 +1,4 @@
+<form  [formGroup]="form" (ngSubmit)="agregar()">
 <div class="card">
     <div class="card-header">
         <h1 class="card-title">Agregar producto</h1>
@@ -7,25 +8,25 @@
             <mat-grid-tile>
                 <mat-form-field class="form-input" appearance="standard">
                     <mat-label>Código</mat-label>
-                    <input matInput value="">
+                    <input matInput value="" formControlName="codigo">
                 </mat-form-field>
             </mat-grid-tile>
             <mat-grid-tile>
                 <mat-form-field class="form-input" appearance="standard">
                     <mat-label>Nombre</mat-label>
-                    <input matInput value="">
+                    <input matInput value="" formControlName="nombre">
                 </mat-form-field>
             </mat-grid-tile>
             <mat-grid-tile>
                 <mat-form-field class="form-input" appearance="standard">
                     <mat-label>Marca</mat-label>
-                    <input matInput value="">
+                    <input matInput value="" formControlName="marca">
                 </mat-form-field>
             </mat-grid-tile>
             <mat-grid-tile>
                 <mat-form-field class="form-input" appearance="standard">
                     <mat-label>Proveedor</mat-label>
-                    <input matInput value="">
+                    <input matInput value="" formControlName="proveedor">
                 </mat-form-field>
             </mat-grid-tile>
         </mat-grid-list>
@@ -33,6 +34,7 @@
 </div>
 <br>
 <div class="action-group-buttons">
-    <button mat-raised-button color="primary">Confirmar</button>
+    <button type="submit" mat-raised-button color="primary">Confirmar</button>
     <button mat-button routerLink="..">Volver</button>
 </div>
+</form>

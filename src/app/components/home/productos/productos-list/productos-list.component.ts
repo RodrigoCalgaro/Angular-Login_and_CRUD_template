@@ -13,7 +13,7 @@ import { ProductosService } from 'src/app/services/productos.service';
 
 export class ProductosListComponent implements OnInit {
   displayedColumns: string[] = ['codigo', 'nombre', 'marca', 'proveedor'];
-  dataSource!: MatTableDataSource<Producto>;
+  dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -22,12 +22,12 @@ export class ProductosListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.productosService.getAll().subscribe(products => {
-
-      // Assign the data to the data source for the table to render
-      this.dataSource = new MatTableDataSource(products);
-      this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
+    this.productosService.getAll().subscribe(res => {
+      if(res.success) {
+        this.dataSource = new MatTableDataSource<any>(res.productos);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+      }
     })
   }
 
