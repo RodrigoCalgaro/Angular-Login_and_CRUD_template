@@ -18,6 +18,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [],
@@ -37,6 +38,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatTableModule,
     MatPaginatorModule,
     MatGridListModule,
+    MatDialogModule,
   ],
   exports: [
     ReactiveFormsModule,
@@ -53,6 +55,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatTableModule,
     MatPaginatorModule,
     MatGridListModule,
+    MatDialogModule,
   ]
 })
 export class SharedModule { }

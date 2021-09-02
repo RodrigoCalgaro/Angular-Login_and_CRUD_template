@@ -19,8 +19,8 @@ export class ProductosService {
   }
 
 
-  get(id: number): Observable<Producto> {
-    return this.http.get<Producto>(`${environment.apiUrl}/productos/${id}`)
+  get(id: number): Observable<any> {
+    return this.http.get<any>(`${environment.apiUrl}/productos/${id}`)
   }
 
   add(producto: Producto): Observable<any> {

@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Producto } from 'src/app/interfaces/producto';
 import { ProductosService } from 'src/app/services/productos.service';
 
 @Component({
@@ -9,7 +8,7 @@ import { ProductosService } from 'src/app/services/productos.service';
   templateUrl: './productos-add.component.html',
   styleUrls: ['./productos-add.component.css']
 })
-export class ProductosAddComponent implements OnInit {
+export class ProductosAddComponent {
   form: FormGroup;
   
   constructor(private fb: FormBuilder, private productosService: ProductosService, private router: Router) { 
@@ -19,9 +18,6 @@ export class ProductosAddComponent implements OnInit {
       marca: ['', Validators.required],
       proveedor: ['', Validators.required],
     })
-  }
-
-  ngOnInit(): void {
   }
 
   agregar(): void {
